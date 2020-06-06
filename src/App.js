@@ -13,6 +13,7 @@ const App = () => {
         //handling the event where the pressed key is enter which makes a search
         if(e.key === 'Enter'){
             const data = await fetchWeather(query) 
+            console.log(data);
             setWeather(data); //setweather = data we have received
             setQuery('');//resets the query string after they hit enter
         }
@@ -29,6 +30,7 @@ const App = () => {
                 onKeyPress = {search}
             />
             {/*If weather.main exists then it will return the react component in the ( ) part, thats what the && does, if it doesnt exist it doesnt makea the component
+               I have the country super scripped(on top) of the city
              */}
             {weather.main && (
                 <div className = "city">
@@ -36,6 +38,17 @@ const App = () => {
                         <span>{weather.name}</span>
                         <sup>{weather.sys.country}</sup>
                     </h2>
+                    <div className = "city-temp">
+                        {Math.round(weather.main.temp)}
+                        <sup>&deg;C</sup>
+                    </div>
+                    {/*Improve by maybe desstructuring weather instead of doing weather.weight[0]
+                        the first item in weather is the description*/}
+                    <div className = "info">                    
+                        <img className="city-icon" src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt={weather.weather[0].description}/>
+                        <p>{weather.weather[0].description}</p>
+                        <p>{weather.main.humidity}</p>
+                    </div>
                 </div>
             )}
         </div>
