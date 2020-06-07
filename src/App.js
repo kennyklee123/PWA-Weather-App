@@ -13,7 +13,7 @@ const App = () => {
         //handling the event where the pressed key is enter which makes a search
         if(e.key === 'Enter'){
             const data = await fetchWeather(query) 
-            console.log(data);
+           // console.log(data);
             setWeather(data); //setweather = data we have received
             setQuery('');//resets the query string after they hit enter
         }
