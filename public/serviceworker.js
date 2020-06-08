@@ -22,7 +22,7 @@ self.addEventListener('install', (event) => {
  .then: for all requests we fetch them again(the return part) because we don't want to store the data about the API, since they alwys want the current weather
  .catch it couldnt fetch the data which means no internet connection so we load offline.html
 */
-self.addEventListener('fetch', () => {
+self.addEventListener('fetch', (event) => {
     event.respondWith(
         caches.match(event.request)
             .then(() => {
@@ -33,7 +33,7 @@ self.addEventListener('fetch', () => {
 }); 
 
 //Active the Service worker
-self.addEventListener('activate', () => {
+self.addEventListener('activate', (event) => {
     const cacheWhitelist = [];
     cacheWhitelist.push(CACHE_NAME);//we want to keep the cache we are working iwth
     //caches.keys returns a promise that resolves to an array of Cache keys
