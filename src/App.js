@@ -18,7 +18,6 @@ const App = () => {
             setQuery('');//resets the query string after they hit enter
         }
     }
-
     return (
         <div className = "main-container">
             <input
@@ -39,8 +38,8 @@ const App = () => {
                         <sup>{weather.sys.country}</sup>
                     </h2>
                     <div className = "city-temp">
-                        {Math.round(weather.main.temp)}
-                        <sup>&deg;C</sup>
+                        {weather.main.temp}
+                        <sup>&deg;F</sup>
                     </div>
                     {/*Improve by maybe desstructuring weather instead of doing weather.weight[0]
                         the first item in weather is the description*/}
@@ -48,6 +47,7 @@ const App = () => {
                         <img className="city-icon" src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt={weather.weather[0].description}/>
                         <p>{weather.weather[0].description}</p>
                         <p>{weather.main.humidity}</p>
+                        <p>{weather.main.feels_like}</p>
                     </div>
                 </div>
             )}
