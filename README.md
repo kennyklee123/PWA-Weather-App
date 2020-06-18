@@ -1,5 +1,11 @@
-Hello!  This is a Progressive Web App that allows users to search up the weather conditions of any city in the world!  This weather-app is built using React and Open Weather API.
+#PA Weather App that is also a Progressive Web App
 
-To run this App, all you have to do is type npm start wherever you downloaded the folder for the weather-app and you are good to go!
+This Web App that allows users to search up the weather conditions of any city in the world!  This weather-app is built using React and Open Weather API.
+
+#How to run the App
+
+All you need to do is download the app and run npm install & npm start.  
+
+
 
 
