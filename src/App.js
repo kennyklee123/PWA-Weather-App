@@ -41,18 +41,22 @@ const App = () => {
                         {weather.main.temp}
                         <sup>&deg;F</sup>
                     </div>
-                    {/*Improve by maybe desstructuring weather instead of doing weather.weight[0]
-                        the first item in weather is the description*/}
                     <div className = "info">                    
                         <img className="city-icon" src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt={weather.weather[0].description}/>
                         <p>{weather.weather[0].description}</p>
-                        <p>{weather.main.humidity}</p>
-                        <p>{weather.main.feels_like}</p>
+                        <p>Humidity: {weather.main.humidity}</p>
+                        <p>Feels Like:{weather.main.feels_like}&deg;F</p>
+                        <p>Pressure: {weather.main.pressure} hPa</p>
+                        <p>Wind: {weather.wind.speed} coming from {weather.wind.deg}&deg;F</p>
+                        <p>Minimum temperature at the moment: {weather.main.temp_min}&deg;F</p>
+                        <p>Maximum temperature at the moment: {weather.main.temp_max}&deg;F</p>
                     </div>
+                    {/*Improve by maybe desstructuring weather instead of doing weather.weight[0]
+                        the first item in weather is the description*/}
+                 
                 </div>
             )}
         </div>
     );
 }
-
 export default App;

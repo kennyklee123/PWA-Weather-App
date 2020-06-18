@@ -90,4 +90,7 @@ p {
     .city {
         padding: 40px 20%;
     }
+    .column {
+        width: 100%;
+      }
 }
