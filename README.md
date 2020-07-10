@@ -4,7 +4,7 @@ This Web App that allows users to search up the weather conditions of any city i
 
 
 # How to run the app!
-All you need to do is clone the app and run npm install & npm start.  
+All you need to do is clone the repo and run npm install, then run npm run!
 
 
 
